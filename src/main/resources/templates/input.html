@@ -2,17 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <title>Thymeleaf課題</title>
+    <title th:text="#{content.title}"></title>
     <link rel="stylesheet" th:href="@{/css/input.css}">
 </head>
 <body>
-    <h1>Thymeleaf課題</h1>
-    <h2>入力画面</h2>
-    <p>値を入力してください。</p>
+    <h1 th:text="#{content.title}"></h1>
+    <h2 th:text="#{content.inputscreen}"></h2>
+    <p th:text="#{content.pleaseentervalue}"></p>
     <p th:if="${param.previous != null and param.previous != ''}" th:text="'前回入力された値は「' + ${param.previous} + '」です。'"></p>
     <form action="/output" method="post">
         <input type="text" name="previous">
-        <button type="submit">送信</button>
+        <button type="submit" th:text="#{content.submit}"></button>
     </form>
 </body>
 </html>
